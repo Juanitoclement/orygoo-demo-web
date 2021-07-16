@@ -89,12 +89,12 @@ export const Landing = () => {
     return(
     <div className="App">
       <header className="App-header">
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="orygoo.com" />
 
         <div className="container">
           <TextField
               id="outlined-basic"
-              label="User Id"
+              label="User ID"
               variant="outlined"
               onChange={onChangeText}
               size="small"
