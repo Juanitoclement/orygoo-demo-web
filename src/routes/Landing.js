@@ -107,7 +107,7 @@ export const Landing = () => {
         </div>
 
         <Button size="small" color="primary" variant="outlined" onClick={() => {
-          fetchWithCache(["HomepageByUserId"])
+          fetchWithCache()
         }}>Get Variant</Button>
 
         <IconButton color="primary" aria-label="upload picture" component="span" onClick={() => reset()}>
