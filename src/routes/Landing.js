@@ -64,7 +64,9 @@ export const Landing = () => {
           if(res && res.data === 'Please Initialize First / Contact our team'){
             handleSnackBar(res.data)
           } else {
-            setColor(res.value['Color'])
+            let keyName = Object.keys(res.value)
+            console.log(keyName, res.value[keyName], 'helo key name')
+            setColor(res.value[keyName])
           }
         }
     )
