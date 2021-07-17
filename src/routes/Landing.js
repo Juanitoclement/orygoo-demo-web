@@ -83,6 +83,17 @@ export const Landing = () => {
     )
   }
 
+  function track(eventName){
+    orygoo.trackEvent(eventName, '', '', '').then(
+        res => {
+          console.log(res, 'helo track')
+          if(res){
+            handleSnackBar(res)
+          }
+        }
+    )
+  }
+
   const onChangeText = (e) => {
     e.preventDefault();
     setUserId(e.target.value)
@@ -108,9 +119,17 @@ export const Landing = () => {
           </Button>
         </div>
 
-        <Button size="small" color="primary" variant="outlined" onClick={() => {
-          fetchWithCache()
-        }}>Get Variant</Button>
+        <div className="container">
+          <Button size="small" color="secondary" variant="outlined" onClick={() => {
+            track('Track_1')
+          }}>Track 1</Button>
+          <Button size="small" color="secondary" variant="outlined" onClick={() => {
+            track('Track_2')
+          }}>Track 2</Button>
+          <Button size="small" color="primary" variant="outlined" onClick={() => {
+            fetchWithCache()
+          }}>Get Variant</Button>
+        </div>
 
         <IconButton color="primary" aria-label="upload picture" component="span" onClick={() => reset()}>
           <RotateLeftIcon />
