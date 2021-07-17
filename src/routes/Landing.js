@@ -120,15 +120,21 @@ export const Landing = () => {
         </div>
 
         <div className="container">
-          <Button size="small" color="secondary" variant="outlined" onClick={() => {
-            track('Track_1')
-          }}>Track 1</Button>
-          <Button size="small" color="secondary" variant="outlined" onClick={() => {
-            track('Track_2')
-          }}>Track 2</Button>
-          <Button size="small" color="primary" variant="outlined" onClick={() => {
-            fetchWithCache()
-          }}>Get Variant</Button>
+          <div style={{marginRight: 10}}>
+            <Button size="small" color="secondary" variant="outlined" onClick={() => {
+              track('Track_1')
+            }}>Track 1</Button>
+          </div>
+          <div style={{marginRight: 10}}>
+            <Button size="small" color="secondary" variant="outlined" onClick={() => {
+              track('Track_2')
+            }}>Track 2</Button>
+          </div>
+          <div style={{marginRight: 0}}>
+            <Button size="small" color="primary" variant="outlined" onClick={() => {
+              fetchWithCache()
+            }}>Get Variant</Button>
+          </div>
         </div>
 
         <IconButton color="primary" aria-label="upload picture" component="span" onClick={() => reset()}>
