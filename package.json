@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "node-cache": "^5.1.2",
-    "orygoo-sdk": "0.0.25",
+    "orygoo-sdk": "0.0.26",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
