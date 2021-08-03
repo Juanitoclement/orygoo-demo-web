@@ -5,12 +5,14 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import logo from '../assets/orygoo.png';
 import '../App.scss';
 
-const orygoo = require("orygoo-sdk");
+const OrygooManager = require('@orygoo/orygoo-sdk');
+
+const orygoo = new OrygooManager();
 
 orygoo.createInstance({
-    clientKey: '1ecb498e3f32476a9b43ba29da9c9d03',
-    secretKey: '1fca401d5b4d49a3ac098de5462c6213c5061d8c7708406db865e4ceb0a1bf1b'
-})
+  clientKey: '1ecb498e3f32476a9b43ba29da9c9d03',
+  secretKey: '1fca401d5b4d49a3ac098de5462c6213c5061d8c7708406db865e4ceb0a1bf1b'
+});
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -46,7 +48,7 @@ export const Landing = () => {
   };
 
   const handleSnackBar = (props) => {
-    if(props === 'Please Initialize First / Contact our team'){
+    if(props === 'Initialize First'){
       setMessage(props)
       setSeverity('error')
     } else {
@@ -58,11 +60,11 @@ export const Landing = () => {
   }
 
   function fetchWithCache(namespaces){
-    orygoo.getVariants(['Button']).then(
+    orygoo.getVariants(['Button'], ['lol']).then(
         res => {
-          console.log(res, 'helo getVariant')
-          if(res && res.data === 'Please Initialize First / Contact our team'){
-            handleSnackBar(res.data)
+          console.log(res === 'Initialize First', 'helo getVariant')
+          if(res === 'Initialize First'){
+            handleSnackBar('Initialize First')
           } else {
             let keyName = Object.keys(res.value)
             console.log(keyName, res.value[keyName], 'helo key name')
@@ -73,11 +75,11 @@ export const Landing = () => {
   }
 
   function initialize(){
-    orygoo.initOrygoo(userId, null, '1', 'xdigoxinx@gmail.com', '081344559903', 'en', 'ID').then(
+    orygoo.initialize(userId, null, '1', 'xdigoxinx@gmail.com', '081344559903', 'en', 'ID').then(
         res => {
           console.log(res, 'helo initialize')
           if(res){
-            handleSnackBar(res.sessionToken)
+            handleSnackBar(res)
           }
         }
     )
