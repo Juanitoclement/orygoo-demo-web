@@ -62,7 +62,6 @@ export const Landing = () => {
   function fetchWithCache(namespaces){
     orygoo.getVariants(['Button'], ['lol']).then(
         res => {
-          console.log(res === 'Initialize First', 'helo getVariant')
           if(res === 'Initialize First'){
             handleSnackBar('Initialize First')
           } else {
