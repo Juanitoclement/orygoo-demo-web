@@ -10,8 +10,8 @@ const OrygooManager = require('@orygoo/orygoo-sdk');
 const orygoo = new OrygooManager();
 
 orygoo.createInstance({
-  clientKey: '1ecb498e3f32476a9b43ba29da9c9d03',
-  secretKey: '1fca401d5b4d49a3ac098de5462c6213c5061d8c7708406db865e4ceb0a1bf1b'
+  clientKey: 'C-1ecb498e3f32476a9b43ba29da9c9d03',
+  secretKey: 'STG-1fca401d5b4d49a3ac098de5462c6213c5061d8c7708406db865e4ceb0a1bf1b'
 });
 
 function Alert(props) {
