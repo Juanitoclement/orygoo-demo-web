@@ -11,7 +11,8 @@ const orygoo = new OrygooManager();
 
 orygoo.createInstance({
   clientKey: 'C-1ecb498e3f32476a9b43ba29da9c9d03',
-  secretKey: 'STG-1fca401d5b4d49a3ac098de5462c6213c5061d8c7708406db865e4ceb0a1bf1b'
+  secretKey: 'STG-1fca401d5b4d49a3ac098de5462c6213c5061d8c7708406db865e4ceb0a1bf1b',
+  defaultTimeout: 1000,
 });
 
 function Alert(props) {
@@ -60,14 +61,12 @@ export const Landing = () => {
   }
 
   function fetchWithCache(namespaces){
-    orygoo.getVariants(['Button'], ['lol']).then(
+    orygoo.getVariants(['Keyboard'], ['lol']).then(
         res => {
           if(res === 'Initialize First'){
             handleSnackBar('Initialize First')
           } else {
-            let keyName = Object.keys(res.value)
-            console.log(keyName, res.value[keyName], 'helo key name')
-            setColor(res.value[keyName])
+            setColor(res['Keyboard'].value['Color'])
           }
         }
     )
