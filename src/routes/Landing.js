@@ -102,7 +102,7 @@ export const Landing = () => {
     return(
     <div className="App">
       <header className="App-header">
-        <img src={logo} alt="orygoo.com" />
+        <img src={logo} alt="orygoo.com" style={{width: '300px'}}/>
 
         <div className="container">
           <TextField
